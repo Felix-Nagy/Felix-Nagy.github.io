@@ -234,7 +234,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.scene.add(navright)
 
 
-                let play = ModelLoader.getAnimation({
+            /*    let play = ModelLoader.getAnimation({
                     name: 'play',
                     position: new THREE.Vector3(-33,posYp,40),
                     rotation: new THREE.Vector3(0,0, Math.PI),
@@ -259,7 +259,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.scene.add(play)
                 this.scene.add(stop)
 
-
+*/
                 let videoGame = document.getElementById('game')
                 var textureGame = new THREE.VideoTexture( videoGame );
                 textureGame.minFilter = THREE.LinearFilter;

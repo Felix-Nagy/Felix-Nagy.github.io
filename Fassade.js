@@ -10,6 +10,10 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
       selected_object_color
       selected_mesh
 
+
+      selected_object2
+      selected_object_color2
+
       count = 0
       updateManager
 
@@ -34,7 +38,7 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
             this.selected_object_color = intersects[0].object.material.color
           }
           //  intersects[0].object.scale.set(3, 4, 6);
-          intersects[0].object.material.color = new THREE.Color(this.selected_object_color.r + .27, this.selected_object_color.g + .27, this.selected_object_color.b + .27)
+          intersects[0].object.material.color = new THREE.Color(this.selected_object_color.r + .3, this.selected_object_color.g + .3, this.selected_object_color.b + .3)
 
         } else if (this.selected_object) {
           // this.selected_object.scale.set(2, 3, 5);
@@ -42,6 +46,7 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
 
         }
       }
+
 
       /**
        *function to select a CAD model resulting in only corresponding text object to follow the camera. Selected model gets brighter
@@ -74,6 +79,7 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
             if (intersects[0].object.name == picking_objects[index].name) {
               if (intersects[0].object.name == 'nav_down') {
                 this.updateManager.moveDown()
+                document.getElementById(this.observer.order[1]).play();
               }
               if (intersects[0].object.name == 'nav_up') {
                 this.updateManager.moveUp()

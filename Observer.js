@@ -163,14 +163,14 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
 
     })
 
-       window.addEventListener("touchmove", this.ontouchmove = (event) => {
+     /*  window.addEventListener("touchmove", this.ontouchmove = (event) => {
         this.mouse.x = +(event.targetTouches[0].pageX / window.innerWidth) * 2 +-1;
         this.mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
         this.raycaster.setFromCamera(this.mouse, this.camera);
             let intersects = this.raycaster.intersectObjects(this.meshManager.pickingObjects);
             this.fassade.onMouseMove(intersects);
     })
-
+*/
       window.addEventListener("touchend", this.ontouchend = (event) => {
             this.mouse.x = -10000000
             this.mouse.y = -10000000
@@ -184,11 +184,9 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
      this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         this.raycaster.setFromCamera(this.mouse, this.camera);
-        let intersects = this.raycaster.intersectObjects(this.meshManager.pickingObjects, true);
+        let intersects = this.raycaster.intersectObjects(this.meshManager.pickingObjects.concat(this.intersect_videos), true);
         this.fassade.onMouseMove(intersects);
 
-     // let intersects2 = this.raycaster.intersectObjects(this.intersect_videos, true);
-    //    this.fassade.onMouseMove(intersects2);
             })
 
     window.addEventListener("mouseout", this.in_clearPickPosition = () => {
@@ -200,6 +198,15 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
           this.mouse.x = -100000;
             this.mouse.y = -100000;
         })
+
+     window.addEventListener("wheel", (event) => {
+
+
+        	this.camera.position.y -= event.deltaY * 0.05;
+
+       })
+
+
 
   }
 
@@ -236,6 +243,8 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
         this.order = newOrder
       }
   }
+
+
 
 
   return Observer;
