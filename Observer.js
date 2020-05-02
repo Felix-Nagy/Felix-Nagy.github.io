@@ -187,8 +187,8 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
         let intersects = this.raycaster.intersectObjects(this.meshManager.pickingObjects, true);
         this.fassade.onMouseMove(intersects);
 
-      //  intersects = this.raycaster.intersectObjects(this.intersect_videos, true);
-      //  this.fassade.onMouseMove(intersects);
+     // let intersects2 = this.raycaster.intersectObjects(this.intersect_videos, true);
+    //    this.fassade.onMouseMove(intersects2);
             })
 
     window.addEventListener("mouseout", this.in_clearPickPosition = () => {

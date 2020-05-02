@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GeoTagApp</title>
+		<link rel='stylesheet' href='public/stylesheets/style.css'/>
+	</head>
+
+	<body>
+
+		<header>
+			<img src="public/images/location.png" width="100"
+					alt="an image of a map and location">
+			<h1>GeoTagApp</h1>
+			<h2> To See the fully working example download the website from Github und run npm start in the console</h2>
+			<nav>
+				<a href="#">About</a> | <a href="#">Help</a> | <a
+					href="/">Home</a>
+			</nav>
+		</header>
+
+		<main class="row">
+
+			<section class="tagging col-4">
+				<h2>Tagging</h2>
+
+				<!-- ############### Aufgabe1a Form1 Start -->
+				<form id="tag-form" action="/tagging" method="post">
+					<fieldset>
+						<legend>Enter new Geotag</legend>
+
+						<label for="lon-input">longitude
+							<input type="text" name="longitude" id="lon-input" placeholder="49.000021" required>
+						</label>
+
+						<label for="lat-input">latitude
+							<input type="text" name="latitude" id="lat-input" placeholder="8.8567567" required>
+						</label>
+
+						<label for="name-input">name
+							<input type="text" name="name" id="name-input" placeholder="some name" required
+								   maxlength="10">
+						</label>
+
+						<label for="hashtag-input">hashtag
+						<input type="text" name="hashtag" id="hashtag-input" placeholder="# + 10 max letters"
+							   pattern="#(\w|\d){0,10}">
+						</label>
+
+						<input type="submit" value="submit">
+					</fieldset>
+				</form>
+				<!-- ############### Aufgabe1a Form1 Ende -->
+
+			</section>
+
+			<section class="discovery col-8">
+				<h2>Discovery</h2>
+
+				<div class="row">
+					<div class="search col-12">
+						<!-- ############### Aufgabe1a Form2 Start -->
+						<form id="filter-form" action="/discovery" method="post">
+							<fieldset>
+								<legend>Filter by Searchterm</legend>
+
+								<input type="text" name="search" id="search-input" placeholder="search term">
+
+								<input type="submit" name="apply" value="Apply">
+								<input type="submit" name="remove" value="Remove">
+
+							
+									<input type="hidden" name="longitude" id="lon-inputH" >
+							
+									<input type="hidden" name="latitude" id="lat-inputH" >
+							
+		
+							</fieldset>
+						</form>
+						<!-- ############### Aufgabe1a Form2 Ende -->
+					</div>
+				</div>
+
+				<div class="tagresult row">
+					<div class="taglist col-4">
+						<ul id="results">
+							<li>Castle (49.01379, 8.404435) #sight</li>
+							<li>IWI (49.01379, 8.390071) #edu</li>
+						</ul>
+					</div>
+
+					<div class="tagmap col-8">
+						<div class="row">
+							<img id="result-img" class="col-12" src="public/images/mapview.jpg" alt="a map with locations"/>
+							<div class="caption col-12">Result map</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+		</main>
+
+		<footer>
+
+		</footer>
+
+	</body>
+	<!-- Load JavaScripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="public/javascripts/geotagging.js"></script>
+</html>
