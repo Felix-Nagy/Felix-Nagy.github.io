@@ -1,0 +1,68 @@
+{
+  "Text":[{
+    "name": "IntroductionHeader",
+    "text": "LOOKING FOR A WEB DEVELOPER ?",
+    "position": [-67,43,0],
+    "rotation": [0,0,0 ],
+    "scale": [1.6,1.6,1.6 ],
+    "color": "0x000000",
+    "parent" : "Cube", "listener" : ""
+  },
+    {    "name": "Introduction",
+      "text": "Hi, my name is Felix, I am a Full Stack Developer living in germany. I make Web Applications while trying to improve myself on a daily basis" ,
+      "position": [-67,20,0],
+      "rotation": [0,0,0 ],
+      "scale": [1, 1, 1 ],
+      "color": "0x000000",
+      "parent" : "Cube",
+      "lineHeight": 46
+    },
+
+    {    "name": "More",
+      "text": "Want to know more ? Take a look at my recent work" ,
+      "position": [-67,0,0],
+      "rotation": [0,0,0 ],
+      "scale": [1, 1, 1 ],
+      "color": "0x000000",
+      "width": "1200",
+      "parent" : "Cube", "listener" : ""
+    },
+    {    "name": "Outro",
+      "text": "Interested in Working together ?" ,
+      "position": [-67,-350,0],
+      "rotation": [0,0,0 ],
+      "scale": [1.4, 1.4, 1.4 ],
+      "color": "0x000000",
+      "width": "1000",
+      "parent" : "Cube", "listener" : ""
+    },
+    {    "name": "Outro2",
+      "text": "You can reach out to me through:" ,
+      "position": [-67,-360,0],
+      "rotation": [0,0,0 ],
+      "scale": [1.2, 1.2, 1.2 ],
+      "color": "0x000000",
+      "width": "1000",
+      "parent" : "Cube", "listener" : ""
+    },
+    {    "name": "email",
+      "text": "E-Mail: felix.nagy15@gmail.com" ,
+      "position": [-67,-375,0],
+      "rotation": [0,0,0 ],
+      "scale": [1.2, 1.2, 1.2 ],
+      "color": "0x000000",
+      "width": "1000",
+      "parent" : "Cube", "listener" : ""
+    },
+    {    "name": "phone",
+      "text": "Phone: 015234155599" ,
+      "position": [-67,-385,0],
+      "rotation": [0,0,0 ],
+      "scale": [1.2, 1.2, 1.2 ],
+      "color": "0x000000",
+      "width": "1000",
+      "parent" : "Cube", "listener" : ""
+    }
+  ],
+  "Model":[]
+}

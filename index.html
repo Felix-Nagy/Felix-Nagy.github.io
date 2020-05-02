@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>Felix Nagy</title>
+    <link rel="icon" type="image/png" href="portfolio_old/logo.svg">
+</head>
+<body>
+<div id="scene-container" tabindex="0"></div>
+<video style="opacity: 0;" width="400" id="gallery">
+    <source src="./video/gallery.mov" type="video/mp4">
+</video>
+<video style="opacity: 0;" width="400" id="game">
+    <source src="./video/game.mov" type="video/mp4">
+</video>
+<video style="opacity: 0;" width="400" id="reactApp">
+    <source src="./video/reactApp.mov" type="video/mp4">
+</video>
+
+<link href ="./main.css" rel="stylesheet">
+<script src="./libs/three.min.js"></script>
+<script data-main ="config.js" src = "requirejs.js"></script>
+<script>
+        require(["config"], function () {
+            require(['main.js'])
+
+        });
+
+</script>
+</body>
+</html>

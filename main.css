@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+#scene-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#fullscreen_button {
+    position: absolute;
+}
+
+#fullscreen_button:hover {
+}
+
+button {
+    margin: 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-weight: 400;
+    font-size: .9rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: .375rem .75rem;
+
+}
+
+#delete {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+
+
+#delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+#delete:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, .5);
+}
+
+#cancel{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    position: absolute;
+    left: 90%
+}
+
+#cancel:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+#cancel:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, .5);
+}
+
+#submit {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+
+
+#submit:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+#submit:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, .5)
+}
+
+input {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+#changes {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#create {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#suggestions {
+    position: absolute;
+    left: 35%;
+    top: 48%;
+}
+
+
+
