@@ -172,12 +172,14 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 let posY = -240
                 let posX = 78
                 let posYSide = -220
+                let posYp = -220
                 if(this.onPhone){
-                    posZ =15
-                    posY =-260
+                    posZ =40
+                    posY =-250
                     posX =63
                     posYSide = -240
                     scale = 1.8
+                    posYp = -230
                 }
 
 
@@ -234,7 +236,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
 
                 let play = ModelLoader.getAnimation({
                     name: 'play',
-                    position: new THREE.Vector3(-33,posYSide,40),
+                    position: new THREE.Vector3(-33,posYp,40),
                     rotation: new THREE.Vector3(0,0, Math.PI),
                     scale: new THREE.Vector3(1*scale, 2*scale, 2*scale)
                 })
@@ -244,7 +246,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
 
                 let stop = ModelLoader.getAnimation({
                     name: 'stop',
-                    position: new THREE.Vector3(-42,posYSide,40),
+                    position: new THREE.Vector3(-42,posYp,40),
                     rotation: new THREE.Vector3(0,0, Math.PI),
                     scale: new THREE.Vector3(2*scale, 2*scale, 2*scale)
                 })
@@ -322,7 +324,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                     1700    // far clipping plane
                 );
                 if(this.onPhone) {
-                    this.camera.position.set(-1.5, 1.5, 185);
+                    this.camera.position.set(-1.5, 1.5, 120);
                 } else {
                     this.camera.position.set(-1.5, 1.5, 100);
                 }
