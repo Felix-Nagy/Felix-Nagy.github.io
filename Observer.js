@@ -201,9 +201,9 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
 
      window.addEventListener("wheel", (event) => {
 
-
-        	this.camera.position.y -= event.deltaY * 0.05;
-
+        	this.camera.position.y -= event.deltaY * 0.1;
+            if(this.camera.position.y < -500) this.camera.position.y = -500
+            if(this.camera.position.y > 50) this.camera.position.y = 50
        })
 
 
