@@ -79,12 +79,12 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
                 this.updateManager.moveUp()
               }
               if (intersects[0].object.name == 'nav_left') {
-                this.notifyObserver(State.State_MOVE_LEFT)
+                this.notifyObserver(State.State_MOVE_RIGHT)
          
 
               }
               if (intersects[0].object.name == 'nav_right') {
-                this.notifyObserver(State.State_MOVE_RIGHT)
+                this.notifyObserver(State.State_MOVE_LEFT)
               }
               if (intersects[0].object.name == 'play') {
                 document.getElementById(this.observer.order[1]).play();
@@ -100,7 +100,7 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
       open (intersects) {
         if (intersects.length > 0) {
           if (intersects[0].object.name == 'game') {
-            window.open('/portfolio_old/index.html')
+            window.open('/portfolio_old/JumpnRun/index.html')
           }
           if (intersects[0].object.name == 'gallery') {
             window.open('https://gallerywebappclient.web.app/gallery')
