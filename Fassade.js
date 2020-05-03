@@ -106,7 +106,7 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
       open (intersects) {
         if (intersects.length > 0) {
           if (intersects[0].object.name == 'game') {
-            window.open('/portfolio_old/JumpnRun/index.html')
+            window.open('/portfolio_old/index.html')
           }
           if (intersects[0].object.name == 'gallery') {
             window.open('https://gallerywebappclient.web.app/gallery')

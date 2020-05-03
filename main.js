@@ -8,7 +8,7 @@ define(["./Fassade.js", "./Observer.js", './SceneBuilder.js'], function (Fassade
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve()
-            }, 300)
+            }, 350)
         });
 
     }

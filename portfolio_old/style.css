@@ -59,7 +59,7 @@ h4 {
 
 #designtools p {
     text-align: center;
-    font-family: 'Robot''sans-serif';
+    font-family: 'Robot';
     font-weight: 200;
 
 }
@@ -72,7 +72,7 @@ h4 {
 
 #languages p {
     text-align: center;
-    font-family: 'Robot''sans-serif';
+    font-family: 'Robot';
     font-weight: 200;
 
 }
@@ -142,7 +142,7 @@ navbar :hover {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #07F5FF;
+    background-color: #07d5dd;
     border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -291,8 +291,6 @@ navbar :hover {
 }
 
 @media (max-width: 600px) {
-
-
 
     .text {
         color: white;

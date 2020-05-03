@@ -95,6 +95,7 @@ define(['./ModelLoader.js', './libs/three.min.js'], function (ModelLoader, THREE
       const animationClipL = new THREE.AnimationClip(null, 1, [posL, rotL])
       const animationActionL = left.userData.mixer.clipAction(animationClipL)
       animationActionL.setLoop(THREE.LoopOnce)
+      animationActionL.timeScale = 5
       animationActionL.play()
 
       right.userData.mixer = new THREE.AnimationMixer(right)
@@ -117,6 +118,7 @@ define(['./ModelLoader.js', './libs/three.min.js'], function (ModelLoader, THREE
       const animationClipR = new THREE.AnimationClip(null, 1, [posR, rotR])
       const animationActionR = right.userData.mixer.clipAction(animationClipR)
       animationActionR.setLoop(THREE.LoopOnce)
+      animationActionR.timeScale = 5
       animationActionR.play()
 
       mid.userData.mixer = new THREE.AnimationMixer(mid)
@@ -139,6 +141,7 @@ define(['./ModelLoader.js', './libs/three.min.js'], function (ModelLoader, THREE
       const animationClipM = new THREE.AnimationClip(null, 1, [posM, rotM])
       const animationActionM = mid.userData.mixer.clipAction(animationClipM)
       animationActionM.setLoop(THREE.LoopOnce)
+      animationActionM.timeScale = 5
       animationActionM.play()
     }
 
