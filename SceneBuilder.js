@@ -126,7 +126,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 textureGit.encoding = THREE.sRGBEncoding;
                 textureGit.anisotropy = 16;
                 const geometryPhone = new THREE.BoxGeometry(40, 40, 40);
-                const materialPhone = new THREE.MeshPhongMaterial({color:  0xffffff, opacity: 1, transparent: true, reflectivity: 0.7, map: texturePhone});
+                const materialPhone = new THREE.MeshPhongMaterial({color:  0xffffff, opacity: 1, transparent: true, reflectivity: 1, map: texturePhone});
                 const Phone = new THREE.Mesh(geometryPhone, materialPhone)
                 Phone.position.set(-100, -430, -5.1)
                 Phone.name = "phone"
@@ -134,8 +134,12 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.meshManager.video = Phone
 
 
+                const texture = textureLoader.load('./textures/ground_texture.jpg')
+                textureGit.encoding = THREE.sRGBEncoding;
+                textureGit.anisotropy = 16;
+
                 let geometry = new THREE.BoxGeometry(150,80,5);
-                let material = new THREE.MeshPhongMaterial({color:  0x0052b3, opacity: 1, transparent: true, reflectivity: 0.7});
+                let material = new THREE.MeshPhongMaterial({color:  0x005283, opacity: 1, transparent: true, reflectivity: .7, map:texture});
                 let background = new THREE.Mesh(geometry, material);
                 background.position.set(0,30,-5.1);
 
@@ -150,7 +154,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.scene.add(textAnchor)
 
                 let geometryO = new THREE.BoxGeometry(150,60,5);
-                let materialO = new THREE.MeshPhongMaterial({color:  0x0052b3, opacity: 1, transparent: true, reflectivity: 0.7});
+                let materialO = new THREE.MeshPhongMaterial({color:   0x005283, opacity: 1, transparent: true, reflectivity: 0.7,  map:texture});
                 let backgroundO = new THREE.Mesh(geometryO, materialO);
                 backgroundO.position.set(0,-360,-5.1);
 
@@ -320,7 +324,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 if(this.onPhone) {
                     this.camera.position.set(-1.5, 1.5, 120);
                 } else {
-                    this.camera.position.set(-1.5, 1.5, 100);
+                    this.camera.position.set(-1.5, 1.5, 105);
                 }
             }
 

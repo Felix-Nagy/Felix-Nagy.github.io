@@ -9,7 +9,7 @@
     "parent" : "Cube", "listener" : ""
   },
     {    "name": "Introduction",
-      "text": "Hi, my name is Felix, I am a Full Stack Developer living in Germany. I make Web Applications while trying to improve myself on a daily basis" ,
+      "text": "Hi, my name is Felix, I am a Full Stack Developer living in Germany. I make Web Applications while trying to improve myself on a daily basis." ,
       "position": [-67,20,0],
       "rotation": [0,0,0 ],
       "scale": [1, 1, 1 ],
@@ -19,7 +19,7 @@
     },
 
     {    "name": "More",
-      "text": "Want to know more ? Take a look at my recent work" ,
+      "text": "Want to know more ? Take a look at my recent work." ,
       "position": [-67,0,0],
       "rotation": [0,0,0 ],
       "scale": [1, 1, 1 ],

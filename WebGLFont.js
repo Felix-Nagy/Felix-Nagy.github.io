@@ -5,7 +5,7 @@ define(function (require) {
     const createGeometry = require("./libs/bmfonttext.js");
     const MSDFShader = require("./libs/three-bmfont-text/shaders/msdf.js");
 
-    const fileName = "./fonts/Roboto-msdf";
+    const fileName = "./fonts/SourceSansPro-Regular";
     const jsonPath = fileName + ".json";
     const imagePath = fileName + ".png";
 
