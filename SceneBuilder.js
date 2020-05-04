@@ -104,7 +104,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 const geometryGit = new THREE.BoxGeometry(40, 40, 40);
                 const materialGit = new THREE.MeshPhongMaterial({color:  0xffffff, opacity: 1, transparent: true, reflectivity: 0.7, map: textureGit});
                 const Git = new THREE.Mesh(geometryGit, materialGit)
-                Git.position.set(100, -430, -5.1)
+                Git.position.set(100, -375, -5.1)
                 Git.name = "git"
                 this.scene.add(Git)
                 this.meshManager.video = Git
@@ -116,7 +116,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 const geometryMail = new THREE.BoxGeometry(40, 40, 40);
                 const materialMail = new THREE.MeshPhongMaterial({color:  0xffffff, opacity: 1, transparent: true, reflectivity: 0.7, map: textureMail});
                 const Mail = new THREE.Mesh(geometryMail, materialMail)
-                Mail.position.set(0, -430, -5.1)
+                Mail.position.set(0, -375, -5.1)
                 Mail.name = "mail"
                 this.scene.add(Mail)
                 this.meshManager.video = Mail
@@ -128,16 +128,13 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 const geometryPhone = new THREE.BoxGeometry(40, 40, 40);
                 const materialPhone = new THREE.MeshPhongMaterial({color:  0xffffff, opacity: 1, transparent: true, reflectivity: 1, map: texturePhone});
                 const Phone = new THREE.Mesh(geometryPhone, materialPhone)
-                Phone.position.set(-100, -430, -5.1)
+                Phone.position.set(-100, -375, -5.1)
                 Phone.name = "phone"
                 this.scene.add(Phone)
                 this.meshManager.video = Phone
 
 
-                const texture = textureLoader.load('./textures/ground_texture.jpg')
-                textureGit.encoding = THREE.sRGBEncoding;
-                textureGit.anisotropy = 16;
-
+                const texture = textureLoader.load('./textures/ground_texture_flip.png')
                 let geometry = new THREE.BoxGeometry(150,80,5);
                 let material = new THREE.MeshPhongMaterial({color:  0x005243, opacity: 1, transparent: true, reflectivity: .7, map:texture});
                 let background = new THREE.Mesh(geometry, material);
@@ -153,10 +150,12 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.meshManager.text = textAnchor
                 this.scene.add(textAnchor)
 
+                const texture_flip = textureLoader.load('./textures/ground_texture.jpg')
+
                 let geometryO = new THREE.BoxGeometry(150,60,5);
-                let materialO = new THREE.MeshPhongMaterial({color:   0x005243, opacity: 1, transparent: true, reflectivity: 0.7,  map:texture});
+                let materialO = new THREE.MeshPhongMaterial({color:   0x005243, opacity: 1, transparent: true, reflectivity: 0.7,  map:texture_flip});
                 let backgroundO = new THREE.Mesh(geometryO, materialO);
-                backgroundO.position.set(0,-360,-5.1);
+                backgroundO.position.set(0,-440,-5.1);
 
                 const Outro = new THREE.Object3D();
                 Outro.add(this.meshManager.getText("Outro"));
