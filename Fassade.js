@@ -1,5 +1,5 @@
-define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactory.js'],
-  function (State, WebGLFont, MeshManager, FormFactory) {
+define(['./State.js', './WebGLFont.js', './MeshManagerService.js', ],
+  function (State, WebGLFont, MeshManager) {
 
     class Fassade {
 
@@ -14,7 +14,6 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
       selected_object2
       selected_object_color2
 
-      count = 0
       updateManager
 
       constructor (meshManager, observer, updateManager) {
@@ -47,30 +46,6 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
         }
       }
 
-
-      /**
-       *function to select a CAD model resulting in only corresponding text object to follow the camera. Selected model gets brighter
-       * @param intersects
-       */
-      focus = function (intersects) {
-        let models = this.meshManager.models
-        if (intersects.length > 0) {
-          for (let model in models) {
-            if (intersects[0].object.name == model) {
-              if (this.highlight == models[model]) {
-                this.highlight.material.color = new THREE.Color(this.selected_object_color.r - .3, this.selected_object_color.g - .3, this.selected_object_color.b - .3)
-                this.selected_object_color = this.highlight.material.color
-                this.highlight = undefined
-              } else {
-                this.highlight = models[model]
-                this.highlight.material.color = new THREE.Color(this.selected_object_color.r + .3, this.selected_object_color.g + .3, this.selected_object_color.b + .3)
-                this.selected_object_color = this.highlight.material.color
-              }
-            }
-          }
-        }
-
-      }
 
       selectMesh (intersects) {
         let picking_objects = this.meshManager.pickingObjects
@@ -127,36 +102,6 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', './FormFactor
         }
       }
 
-      onChange = function onChange (mesh, val) {
-
-        let fonts = WebGLFont({
-          name: mesh.name,
-          text: String(val),
-          position: new THREE.Vector3(mesh.position.x, mesh.position.y, mesh.position.z,),
-          rotation: new THREE.Vector3(mesh.rotation.x, mesh.rotation.y, mesh.rotation.z,),
-          scale: new THREE.Vector3(mesh.scale.x, mesh.scale.y, mesh.scale.z,),
-          parent: mesh.parent.name,
-          listener: mesh.listener //param_ref unter user Data
-        })
-
-        this.deleteText(mesh)
-        this.addText(fonts)
-      }
-
-      deleteText (text) {
-        const scene = this.meshManager.scene
-        scene.remove(text)
-        this.meshManager.deleteText(text)
-      }
-
-      addText (text) {
-        this.meshManager.text = text.textAnchor
-        const scene = this.meshManager.scene
-        scene.add(text.textAnchor)
-        if (this.meshManager.getModel(text['parent'])) {
-          text.textAnchor.parent = this.meshManager.getModel(text.parent)
-        }
-      }
     }
 
     return Fassade

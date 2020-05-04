@@ -1,11 +1,10 @@
-define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService.js", "./animations.js", "./updateManager.js",'./controller.js' ], function (
+define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService.js", "./animations.js", "./updateManager.js", ], function (
             Fassade,
   SceneBuilder,
   State,
   MeshManager,
   animations,
   UpdateManager,
-  controller
 ) {
   const THREE = require("./libs/three.min.js");
 
@@ -101,18 +100,14 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
     this.meshManager = sceneBuilder.meshManager;
     this.scene = this.meshManager.scene
     State.highlight = this.meshManager.getVideo('gallery')
-    //State.order.push(this.meshManager.getVideo('reactApp'),this.meshManager.getVideo('gallery'),this.meshManager.getVideo('game'))
     this.updateManager = new UpdateManager(this.fassade, this.meshManager, sceneBuilder.onPhone);
-      this.fassade = new Fassade(this.meshManager, this, this.updateManager)
+    this.fassade = new Fassade(this.meshManager, this, this.updateManager)
     this.updateManager.init();
     let videos = this.meshManager.getVideos()
     for(let i in videos) {
         this.intersect_videos.push(videos[i])
     }
 
-  /* this.gallery = await this.scene.getObjectByName('gallery')
-   this.game =  await this.scene.getObjectByName('game')
-   this.reactApp = await this.scene.getObjectByName('reatApp')*/
    this.gallery = this.meshManager.getVideo('gallery')
    this.game = this.meshManager.getVideo('game')
    this.reactApp = this.meshManager.getVideo('reactApp')
@@ -163,14 +158,6 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
 
     })
 
-     /*  window.addEventListener("touchmove", this.ontouchmove = (event) => {
-        this.mouse.x = +(event.targetTouches[0].pageX / window.innerWidth) * 2 +-1;
-        this.mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
-        this.raycaster.setFromCamera(this.mouse, this.camera);
-            let intersects = this.raycaster.intersectObjects(this.meshManager.pickingObjects);
-            this.fassade.onMouseMove(intersects);
-    })
-*/
       window.addEventListener("touchend", this.ontouchend = (event) => {
             this.mouse.x = -10000000
             this.mouse.y = -10000000
@@ -224,8 +211,6 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
     this.renderer.render(this.scene, this.camera);
   }
 
-// checking for various control combinations when selecting an object
-
       decideOrderRight() {
         let newOrder = []
         newOrder[0] = this.order[2]
@@ -243,8 +228,6 @@ define(["./Fassade.js", "./SceneBuilder.js", "./State.js", "./MeshManagerService
         this.order = newOrder
       }
   }
-
-
 
 
   return Observer;

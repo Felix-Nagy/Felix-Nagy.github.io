@@ -371,61 +371,6 @@ define(['./ModelLoader.js', './libs/three.min.js'], function (ModelLoader, THREE
       return camera
     }
 
-    arrow = function (center, radius, parameter) {
-      const mesh = ModelLoader.getAnimation({
-        name: 'arrow',
-        position: new THREE.Vector3(center.position.x - radius, center.position.y, center.position.z),
-        rotation: new THREE.Vector3(0, 0, Math.PI),
-        scale: new THREE.Vector3(1, 1, 1)
-      })
-
-      mesh.userData.mixer = new THREE.AnimationMixer(mesh)
-      let pos = new THREE.VectorKeyframeTrack(
-        '.position',
-        [0, 1, 2, 3, 4],
-        [
-          mesh.position.x,
-          mesh.position.y,
-          mesh.position.z,
-
-          mesh.position.x + radius,
-          mesh.position.y + radius,
-          mesh.position.z,
-
-          mesh.position.x + 2 * radius,
-          mesh.position.y,
-          mesh.position.z,
-
-          mesh.position.x + radius,
-          mesh.position.y - radius,
-          mesh.position.z,
-
-          mesh.position.x,
-          mesh.position.y,
-          mesh.position.z,
-
-        ], THREE.InterpolateSmooth
-      )
-      let rot = new THREE.VectorKeyframeTrack(
-        '.rotation[z]',
-        [0, 1, 2, 3, 4],
-        [
-          0,
-          -Math.PI / 2,
-          -Math.PI,
-          -Math.PI - Math.PI / 2,
-          -2 * Math.PI,
-        ]
-      )
-      const animationClip = new THREE.AnimationClip(null, 4, [pos, rot])
-      const animationAction = mesh.userData.mixer.clipAction(animationClip)
-      animationAction.play()
-      animationAction.timeScale = 2
-      mesh.listener = parameter
-      this.models[parameter + '_arrow'] = mesh
-      return mesh
-    }
-
     getModel = function (name) {
       return models[name]
     }

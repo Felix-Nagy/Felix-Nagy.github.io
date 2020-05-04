@@ -35,12 +35,6 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 }
             }
 
-            /**
-             * Basic Object to initialize the three scene. Either loads the model data from a local text file or if available from a server
-             * @returns {{container: Element, renderer: *, transformControls: *, orbitControls: *, camera: *, scene: THREE.Scene}}
-             * @constructor
-             */
-
             init() {
                 this.meshManager = new MeshManager()
                 this.setup = setup
