@@ -139,7 +139,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 textureGit.anisotropy = 16;
 
                 let geometry = new THREE.BoxGeometry(150,80,5);
-                let material = new THREE.MeshPhongMaterial({color:  0x005283, opacity: 1, transparent: true, reflectivity: .7, map:texture});
+                let material = new THREE.MeshPhongMaterial({color:  0x005243, opacity: 1, transparent: true, reflectivity: .7, map:texture});
                 let background = new THREE.Mesh(geometry, material);
                 background.position.set(0,30,-5.1);
 
@@ -154,7 +154,7 @@ define(["./Fassade.js", "./WebGLFont.js", "./libs/OrbitControls.js", "./ModelLoa
                 this.scene.add(textAnchor)
 
                 let geometryO = new THREE.BoxGeometry(150,60,5);
-                let materialO = new THREE.MeshPhongMaterial({color:   0x005283, opacity: 1, transparent: true, reflectivity: 0.7,  map:texture});
+                let materialO = new THREE.MeshPhongMaterial({color:   0x005243, opacity: 1, transparent: true, reflectivity: 0.7,  map:texture});
                 let backgroundO = new THREE.Mesh(geometryO, materialO);
                 backgroundO.position.set(0,-360,-5.1);
 
