@@ -31,19 +31,21 @@ define(['./State.js', './WebGLFont.js', './MeshManagerService.js', ],
        */
 
       onMouseMove = function (intersects) {
+
+
+         if (this.selected_object) {
+            this.selected_object.material.color = this.selected_object_color
+           this.selected_object = undefined;
+          }
         if (intersects.length > 0) {
-          if (this.selected_object != intersects[0].object) {
             this.selected_object = intersects[0].object
             this.selected_object_color = intersects[0].object.material.color
-          }
-          //  intersects[0].object.scale.set(3, 4, 6);
-          intersects[0].object.material.color = new THREE.Color(this.selected_object_color.r + .3, this.selected_object_color.g + .3, this.selected_object_color.b + .3)
-
-        } else if (this.selected_object) {
-          // this.selected_object.scale.set(2, 3, 5);
-          this.selected_object.material.color = this.selected_object_color
+           this.selected_object.material.color = new THREE.Color(this.selected_object_color.r + .3, this.selected_object_color.g + .3, this.selected_object_color.b + .3)
 
         }
+
+
+
       }
 
 
